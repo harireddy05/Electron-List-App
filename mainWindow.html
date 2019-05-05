@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper" style="background-color: teal;">
+            <a class="brand-logo left" style="padding-left: 10px;">Any List</a>
+        </div>
+    </nav>
+    <ul></ul>
+
+    <a href="#" id="floatingAdd" onclick="action_createAddWindow()" class="float">
+        <i class="fa fa-plus my-float"></i>
+    </a>
+
+    <script>
+        const electron = require('electron');
+        const { app, ipcRenderer } = electron;
+        const url = require('url');
+        const path = require('path');
+        const ul = document.querySelector('ul');
+
+        const BrowserWindow = electron.remote.BrowserWindow;    
+
+        // Catch add item
+        ipcRenderer.on('item:add', function (e, item) {
+            ul.className = 'collection';
+            const li = document.createElement('li');
+            li.className = 'collection-item';
+            const itemText = document.createTextNode(item);
+            li.appendChild(itemText);
+            ul.appendChild(li);
+            addWindow.close();
+        });
+
+        // Clear all items
+        ipcRenderer.on('item:clear', function () {
+            ul.innerHTML = '';
+            ul.className = '';
+        })
+
+        // Remove item on double click
+        ul.addEventListener('dblclick', removeItem);
+
+        function action_createAddWindow() {
+            ipcRenderer.send('action_AddWindow');
+        }
+        
+        function removeItem(e) {
+            e.target.remove();
+            if (ul.children.length == 0) {
+                ul.className = '';
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
