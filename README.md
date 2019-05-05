@@ -1,4 +1,4 @@
-# Electron-JS-List-App
+# Electron-List-App
 
 This app uses JavaScript with the Electron framework along with usual HTML5 CSS3. 
 It also uses the blend of styling with Materialize CSS library and Bootstrap. 
