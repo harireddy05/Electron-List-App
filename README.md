@@ -8,10 +8,12 @@ The published executable support files are under release build folder without th
 
 To run the application -
 1. Open a prompt/terminal in a folder path.
-2. Type "npm start" and hit 'Enter'.
+2. Type "npm run clean" hit 'Enter' 
+3. Type "npm install" hit 'Enter'
+4. Type "npm start" and hit 'Enter'.
 
 To publish the app - 
-1. Delete release build folder.
+1. Delete release build folder. O
 2. Open a prompt/terminal in the code extracted root folder.
 3. Run "npm run package-win" for windows. 
 4. Run "npm run package-mac" for mac. 
