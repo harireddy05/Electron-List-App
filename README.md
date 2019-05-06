@@ -6,8 +6,8 @@ It is a list app which could be used as a todo, task list, shopping list or any 
 
 To run the application -
 1. Open a prompt/terminal in a folder path.
-2. Type "npm run clean" hit 'Enter' 
-3. Type "npm install" hit 'Enter'
+2. Type "npm run clean" and hit 'Enter' 
+3. Type "npm install" and hit 'Enter'
 4. Type "npm start" and hit 'Enter'.
 
 To publish the app - 
