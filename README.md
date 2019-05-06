@@ -9,3 +9,14 @@ The published executable support files are under release build folder without th
 To run the application -
 1. Open a prompt/terminal in a folder path.
 2. Type "npm start" and hit 'Enter'.
+
+To publish the app - 
+1. Delete release build folder.
+2. Open a prompt/terminal in the code extracted root folder.
+3. Run "npm run package-win" for windows. 
+4. Run "npm run package-mac" for mac. 
+5. Run "npm run package-linux" for linux. 
+
+References -
+1. https://www.christianengvall.se/electron-packager-tutorial/
+2. https://github.com/bradtraversy/electronshoppinglist
